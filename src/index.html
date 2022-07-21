@@ -14,14 +14,23 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <div class="container-card">
-        <div class="family-up-right palo"></div>
-        <div class="num-card"></div>
-        <div class="family-down-left palo"></div>
+      <div class="container-input">
+        <input type="number" class="input-width" min="10" max="50" />
+        <input type="number" class="input-height" min="20" max="80" />
+        <button id="clickSize">Cambiar tamaño</button>
       </div>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="container-card">
+        <div class="family-up-left family" id="familyUp"></div>
+        <div class="num-card"></div>
+        <div class="family-down-right family" id="familyDown"></div>
+      </div>
+      <div class="container-counter">
+        <h1 class="counter"></h1>
+      </div>
+      <div class="container-button">
+        <button class="button" id="click">
+          Update
+        </button>
       </div>
     </div>
     <script src="app.js"></script>

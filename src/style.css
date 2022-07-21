@@ -5,46 +5,57 @@ body {
 
 .container-card {
   background-color: white;
-  max-width: 20em;
-  max-height: 40em;
-  min-height: 30em;
-  min-width: 20em;
+  width: 15em;
+  height: 23em;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4em;
+  margin-top: 2em;
   border-radius: 5%;
   box-shadow: 3px 3px 10px;
   border: 1px solid grey;
+  padding: 10px;
 }
 
-.family-up-right {
-  margin-bottom: 40%;
-  margin-left: 5%;
-  margin-top: 1em;
-  max-width: 3em;
-  max-height: 6em;
-  min-height: 3em;
-  min-width: 3em;
+.family-up-left {
+  margin-right: 80%;
+  font-size: 5em;
+  height: 20%;
 }
 
-.family-down-left {
-  margin-top: 40%;
+.family-down-right {
   margin-left: 80%;
-  margin-right: 5%;
-  margin-bottom: 1em;
-  max-width: 3em;
-  max-height: 6em;
-  min-height: 3em;
-  min-width: 3em;
+  font-size: 5em;
+  transform: rotate(180deg);
+  height: 20%;
 }
 .num-card {
-  max-width: 10em;
-  max-height: 10em;
-  min-height: 10em;
-  min-width: 10em;
+  font-size: 5em;
   margin: auto;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.red {
+  color: rgb(130, 0, 0);
 }
 
-* {
-  border: 1px solid red;
+.container-button {
+  margin-top: 5px;
+}
+
+.button {
+  color: white;
+  background-color: rgb(32, 16, 16);
+  border-radius: 12px;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 4px 5px rgb(25, 25, 25);
+}
+
+.container-input {
+  margin-top: 20px;
 }

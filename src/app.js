@@ -42,6 +42,11 @@ window.onload = function() {
     }
   ];
 
+  let positionRandom = nummax => {
+    const num = Math.floor(Math.random() * nummax);
+    return num;
+  };
+
   let cardGenerator = () => {
     let card = {
       color: "",
@@ -56,21 +61,56 @@ window.onload = function() {
     return card;
   };
 
-  let positionRandom = nummax => {
-    const num = Math.floor(Math.random() * nummax);
-    return num;
+  const update = () => {
+    let cardSelected = cardGenerator();
+    let familyCardRandom = document.querySelectorAll(".family");
+
+    for (let i = 0; i < familyCardRandom.length; i++) {
+      if (cardSelected.color === "red") {
+        familyCardRandom[i].classList.add("red");
+      }
+      familyCardRandom[i].innerHTML = cardSelected.family;
+    }
+
+    let numCardRandom = document.querySelector(".num-card");
+
+    if (cardSelected.number === "AS") {
+      const familyAs = cardSelected.family;
+      cardSelected.number = familyAs;
+    }
+    if (cardSelected.color == "red") {
+      numCardRandom.classList.add("red");
+    }
+    numCardRandom.innerHTML = cardSelected.number;
   };
 
-  let cardSelected = cardGenerator();
-  let familyCardRandom = document.querySelectorAll(".palo");
-  for (let i = 0; i < familyCardRandom.length; i++) {
-    familyCardRandom[i].innerHTML = cardSelected.family;
-  }
-  let numCardRandom = document.querySelector(".num-card");
-  numCardRandom.innerHTML = cardSelected.number;
+  document.getElementById("click").addEventListener("click", update);
+  update();
+  let counter = 10;
+  let counterElement = document.querySelector(".counter");
+  const updateCounter = () => {
+    if (counter < 0) {
+      counter = 10;
+      update();
+    }
+    counterElement.innerHTML = counter;
+    counter--;
+  };
+  setInterval(updateCounter, 1000);
 
-  // btn.addEventListener("click", function() {
-  //   let datos = phraseGenerate();
-  //   document.getElementById("randomPerson").innerHTML = datos;
-  // });
+  const changeSize = () => {
+    let cardSize = document.querySelector(".container-card");
+    let inputWidthValue = document.querySelector(".input-width").value;
+    let inputHeightValue = document.querySelector(".input-height").value;
+
+    cardSize.style.width = inputWidthValue + "em";
+    cardSize.style.height = inputHeightValue + "em";
+    console.log(
+      "Hago algo cuando le das al boton",
+      inputHeightValue,
+      inputWidthValue
+    );
+  };
+
+  document.getElementById("clickSize").addEventListener("click", changeSize);
 };
