@@ -36,9 +36,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-.red {
-  color: rgb(130, 0, 0);
-}
 
 .container-button {
   margin-top: 5px;

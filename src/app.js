@@ -26,11 +26,11 @@ window.onload = function() {
   let familyCards = [
     {
       name: "♦",
-      color: "red"
+      color: "rgb(130, 0, 0)"
     },
     {
       name: "♥",
-      color: "red"
+      color: "rgb(130, 0, 0)"
     },
     {
       name: "♠",
@@ -57,7 +57,6 @@ window.onload = function() {
     card.color = familyCards[positionRandomFamily].color;
     card.family = familyCards[positionRandomFamily].name;
     card.number = numbersCards[positionRandom(numbersCards.length)];
-    console.log(card);
     return card;
   };
 
@@ -66,9 +65,8 @@ window.onload = function() {
     let familyCardRandom = document.querySelectorAll(".family");
 
     for (let i = 0; i < familyCardRandom.length; i++) {
-      if (cardSelected.color === "red") {
-        familyCardRandom[i].classList.add("red");
-      }
+      familyCardRandom[i].style.color = cardSelected.color;
+
       familyCardRandom[i].innerHTML = cardSelected.family;
     }
 
@@ -78,14 +76,16 @@ window.onload = function() {
       const familyAs = cardSelected.family;
       cardSelected.number = familyAs;
     }
-    if (cardSelected.color == "red") {
-      numCardRandom.classList.add("red");
-    }
+
+    numCardRandom.style.color = cardSelected.color;
+
     numCardRandom.innerHTML = cardSelected.number;
   };
 
   document.getElementById("click").addEventListener("click", update);
+
   update();
+
   let counter = 10;
   let counterElement = document.querySelector(".counter");
   const updateCounter = () => {
@@ -105,11 +105,6 @@ window.onload = function() {
 
     cardSize.style.width = inputWidthValue + "em";
     cardSize.style.height = inputHeightValue + "em";
-    console.log(
-      "Hago algo cuando le das al boton",
-      inputHeightValue,
-      inputWidthValue
-    );
   };
 
   document.getElementById("clickSize").addEventListener("click", changeSize);
